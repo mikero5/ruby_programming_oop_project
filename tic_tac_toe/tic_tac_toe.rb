@@ -26,12 +26,14 @@ end
 
 class TicTacToe
   attr_accessor :state_array
+  attr_reader   :current_player
 
-  def initialize(board_numbers)
+  def initialize(board_numbers = true)
     @state_array = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     @player_x = Player.new('X')
     @player_o = Player.new('O')
     @board = Board.new(board_numbers)
+    @current_player = @player_x
   end
 
   def next_turn
@@ -99,16 +101,14 @@ class TicTacToe
     end
     puts ""
   end
-  
-  
 end
 
-use_board_numbers = true
-input_array = ARGV
-if input_array.length > 0
-  if input_array[0] == 'c' || input_array[0] == 'C'
-    use_board_numbers = false
-  end
-end
-game = TicTacToe.new(use_board_numbers)
-game.run
+# use_board_numbers = true
+# input_array = ARGV
+# if input_array.length > 0
+#   if input_array[0] == 'c' || input_array[0] == 'C'
+#     use_board_numbers = false
+#   end
+# end
+# game = TicTacToe.new(use_board_numbers)
+# game.run

@@ -5,6 +5,7 @@
 
 class Player
   attr_reader :symbol
+  attr_writer :move
   
   def initialize(sym)
     @symbol = sym
